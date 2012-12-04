@@ -55,7 +55,7 @@ public class FactGenerator {
 			"C'est Jésus-Christ, le premier héros de ma jeunesse. Il arrivait à attirer les foules !",
 			"J’ai des goûts très ecclésiastiques.",
 			"Pour les actes quotidiens, se réveiller ensemble, manger ensemble, c’est bien. C’est pas abstreignant.",
-			"Remettre les pendules à leur place",
+			"Il est grand temps de remettre les pendules à leur place",
 			"Pour faire un couple, il faut être deux",
 			"Je n'ai jamais dit «Ah que» dans une phrase, je vous le promets.",
 			"Ma devise est : exister, c'est insister ",
@@ -82,6 +82,17 @@ public class FactGenerator {
 			"Je suis un intello (...) j’aurais pu être psy.",
 			"Au théâtre, pendant une représentation du Paradis sur terre, je me suis cassé un doigt sans même m’en rendre compte. J’ai commencé à avoir mal quand le rideau est tombé. Je m’oublie totalement, corps et âme.",
 			"Si Laeticia et moi on se sépare un jour, ce ne sera pas moi qui la quitterai. Ou plutôt, je sais que je ne la quitterai jamais pour une autre. Et puis, si c’est elle qui me quitte, eh bien, je sais aussi que je ne me remarierai jamais.",
+			"Il reste Mick Jagger et moi.",
+			"Je ne vis pas en tant que Johnny Hallyday mais en tant que Jean-Philippe Smet.",
+			"En 2009, j'aurai 66 ans, ça me fera 50 ans de salles, avec tous ces jours partagés entre la scène et les hôtels. Il faut savoir s'arrêter pour faire autre chose.",
+			"C'est bon, on s'en va maintenant.",
+			"Il y a des rumeurs la semaine dernière comme quoi j'étais mort ! Ça arrive de temps en temps, c'est bizarre, je n'arrive pas à savoir d'où ça vient !",
+			"ma qualité, je crois, c'est que je ne triche jamais. Je ne calcule rien. Je ne m'économise pas !",
+			"Pourquoi mon album s'appelle l'Attente ? Parce que je passe ma vie à attendre ma femme !",
+			"Ne me parlez pas de retraite, je déteste ce mot.",
+			"Dans ma tête j'ai toujours 20 ans.",
+			"J'envoie les sentiments dans la gueule des gens, dans leur cerveau, dans leur corps.",
+			"J'admire les gens qui sont capables d'aller voir un psy. J'en suis incapable. Mon meilleur psy, c'est moi-même."
 	};
 
 	/**
