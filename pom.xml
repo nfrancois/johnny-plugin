@@ -10,7 +10,7 @@
     <artifactId>johnny</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <name>Johnny Plugin</name>
-    <description>Displays a picture of Johnny (instead of Jenkins the butler) and a random Johnny 'The Programmer' fact on each build page.</description>
+    <description>Displays a picture of Johnny (instead of Jenkins the butler) and a random Johnny quotes on each build page.</description>
     <url>https://github.com/nfrancois/johnny-plugin</url>
     <packaging>hpi</packaging>
 
@@ -134,7 +134,7 @@
     <scm>
         <connection>scm:git:git://github.com/nfrancois/johnny-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:nfrancois/johnny-plugin.git</developerConnection>
-        <url>https://github.com/nfrancois/ragenorris-plugin</url>
+        <url>https://github.com/nfrancois/johnny-plugin</url>
     </scm>
 
     <pluginRepositories>
