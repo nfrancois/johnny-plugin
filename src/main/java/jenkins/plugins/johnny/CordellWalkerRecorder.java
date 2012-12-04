@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
 import hudson.Launcher;
 import hudson.model.AbstractBuild;

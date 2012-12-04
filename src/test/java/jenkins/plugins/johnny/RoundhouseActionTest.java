@@ -1,5 +1,7 @@
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
+import jenkins.plugins.johnny.RoundhouseAction;
+import jenkins.plugins.johnny.Style;
 import junit.framework.TestCase;
 
 public class RoundhouseActionTest extends TestCase {

@@ -1,6 +1,7 @@
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
 import static org.mockito.Mockito.mock;
+import jenkins.plugins.johnny.BeardDescriptor;
 import hudson.model.AbstractProject;
 import junit.framework.TestCase;
 

@@ -1,5 +1,6 @@
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
+import jenkins.plugins.johnny.FactGenerator;
 import junit.framework.TestCase;
 
 public class FactGeneratorTest extends TestCase {

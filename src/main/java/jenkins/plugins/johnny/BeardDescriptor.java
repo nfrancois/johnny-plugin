@@ -19,59 +19,51 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
-import hudson.model.Result;
+import hudson.Extension;
+import hudson.model.AbstractProject;
+import hudson.tasks.BuildStepDescriptor;
+import hudson.tasks.Publisher;
 
 /**
- * This class provides various Chuck Norris' styles.
+ * This class provides build step description. If you're interested to become a
+ * fan of Chuck Norris' beard, please visit <a
+ * href="http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997"
+ * >http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997</a>.
  * @author cliffano
  */
-public enum Style {
+@Extension
+public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
 
     /**
-     * Johnny is wonderfull
+     * Constructs a {@link BeardDescriptor}.
      */
-    THUMB_UP("Ah que déchire !!!"),
-    /**
-     * An alert Johnny is boring
-     */
-    ALERT("Ah que ..."),
-    /**
-     * Johnny is not happy.
-     */
-    BAD_ASS("Ah que ça craint : ton build, il est pété !");
-
-    private  String message;
-
-    /**
-     * Constructeur with message
-     * @param message
-     */
-    private Style(String message) {
-        this.message = message;
+    public BeardDescriptor() {
+        super(CordellWalkerRecorder.class);
     }
 
     /**
-     * Gets the style corresponding to the build result.
-     * @param result
-     *            the build result
-     * @return the style
+     * Gets the descriptor display name, used in the post step checkbox
+     * description.
+     * @return the descriptor display name
      */
-    public static final Style get(final Result result) {
-        Style style;
-        if (Result.FAILURE.equals(result)) {
-            style = BAD_ASS;
-        } else if (Result.SUCCESS.equals(result)) {
-            style = THUMB_UP;
-        } else {
-            style = ALERT;
-        }
-        return style;
+    @Override
+    public final String getDisplayName() {
+        return "Activate Johnny";
     }
 
-    public String getMessage(){
-        return message;
+    /**
+     * Checks whether this descriptor is applicable.
+     * @param clazz
+     *            the class
+     * @return true - of course the beard is applicable
+     */
+    @Override
+    public final boolean isApplicable(
+            final Class<? extends AbstractProject> clazz) {
+        return true;
     }
+
 
 }

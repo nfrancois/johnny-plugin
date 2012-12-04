@@ -1,5 +1,6 @@
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
+import jenkins.plugins.johnny.Style;
 import hudson.model.Result;
 import junit.framework.TestCase;
 

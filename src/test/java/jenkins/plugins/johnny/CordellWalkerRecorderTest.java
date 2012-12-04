@@ -1,4 +1,4 @@
-package hudson.plugins.johnny;
+package jenkins.plugins.johnny;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -12,6 +12,11 @@ import hudson.model.Result;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jenkins.plugins.johnny.CordellWalkerRecorder;
+import jenkins.plugins.johnny.FactGenerator;
+import jenkins.plugins.johnny.RoundhouseAction;
+import jenkins.plugins.johnny.Style;
 
 import junit.framework.TestCase;
 
