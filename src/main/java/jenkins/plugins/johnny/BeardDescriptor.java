@@ -32,6 +32,7 @@ import hudson.tasks.Publisher;
  * href="http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997"
  * >http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997</a>.
  * @author cliffano
+ * @author Nicolas François
  */
 @Extension
 public class BeardDescriptor extends BuildStepDescriptor<Publisher> {

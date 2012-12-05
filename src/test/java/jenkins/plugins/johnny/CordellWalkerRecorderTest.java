@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jenkins.plugins.johnny.CordellWalkerRecorder;
-import jenkins.plugins.johnny.FactGenerator;
+import jenkins.plugins.johnny.QuoteGenerator;
 import jenkins.plugins.johnny.RoundhouseAction;
 import jenkins.plugins.johnny.Style;
 
@@ -22,12 +22,12 @@ import junit.framework.TestCase;
 
 public class CordellWalkerRecorderTest extends TestCase {
 
-	private FactGenerator mockGenerator;
+	private QuoteGenerator mockGenerator;
 	private CordellWalkerRecorder recorder;
 
 	@Override
 	public void setUp() {
-		mockGenerator = mock(FactGenerator.class);
+		mockGenerator = mock(QuoteGenerator.class);
 		recorder = new CordellWalkerRecorder(mockGenerator);
 	}
 
@@ -44,13 +44,13 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
 		when(mockGenerator.random()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"Les gens m'appellent l'idole des jeunes...");
 
 		Action action = recorder.getProjectAction(mockProject);
 
 		assertTrue(action instanceof RoundhouseAction);
 		assertEquals(Style.THUMB_UP, ((RoundhouseAction) action).getStyle());
-		assertNotNull(((RoundhouseAction) action).getFact());
+		assertNotNull(((RoundhouseAction) action).getQuote());
 	}
 
 	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact()
@@ -61,7 +61,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockBuild.getActions()).thenReturn(actions);
 
 		when(mockGenerator.random()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"Les gens m'appellent l'idole des jeunes...");
 
 		assertEquals(0, actions.size());
 
@@ -72,7 +72,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 		assertTrue(actions.get(0) instanceof RoundhouseAction);
 		assertEquals(Style.BAD_ASS, ((RoundhouseAction) actions.get(0))
 				.getStyle());
-		assertEquals("Chuck Norris burst the dot com bubble.",
-				((RoundhouseAction) actions.get(0)).getFact());
+		assertEquals("Les gens m'appellent l'idole des jeunes...",
+				((RoundhouseAction) actions.get(0)).getQuote());
 	}
 }

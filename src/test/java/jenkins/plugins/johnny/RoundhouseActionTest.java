@@ -10,14 +10,14 @@ public class RoundhouseActionTest extends TestCase {
 
 	public void setUp() {
 		action = new RoundhouseAction(Style.BAD_ASS,
-				"Chuck Norris can divide by zero.");
+				"Les gens m'appellent l'idole des jeunes...");
 	}
 
 	public void testAccessors() {
 		assertEquals(Style.BAD_ASS, action.getStyle());
-		assertEquals("Chuck Norris can divide by zero.", action
-				.getFact());
-		assertEquals("Chuck Norris", action.getDisplayName());
+		assertEquals("Les gens m'appellent l'idole des jeunes...", action
+				.getQuote());
+		assertEquals("Johnny", action.getDisplayName());
 		assertNull(action.getIconFileName());
 		assertEquals("johnny", action.getUrlName());
 	}

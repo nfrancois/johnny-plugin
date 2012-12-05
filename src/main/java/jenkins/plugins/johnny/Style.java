@@ -24,8 +24,9 @@ package jenkins.plugins.johnny;
 import hudson.model.Result;
 
 /**
- * This class provides various Chuck Norris' styles.
+ * This class provides various Johnny' styles.
  * @author cliffano
+ * @author Nicolas François
  */
 public enum Style {
 

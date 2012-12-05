@@ -24,11 +24,12 @@ package jenkins.plugins.johnny;
 import hudson.model.Action;
 
 /**
- * {@link RoundhouseAction} keeps the style and fact associated with the action.
+ * {@link RoundhouseAction} keeps the style and quote associated with the action.
  * For more info, please watch <a
  * href="http://www.youtube.com/watch?v=Vb7lnpk3tRY"
  * >http://www.youtube.com/watch?v=Vb7lnpk3tRY</a>
  * @author cliffano
+ * @author Nicolas François
  */
 public final class RoundhouseAction implements Action {
 
@@ -43,26 +44,26 @@ public final class RoundhouseAction implements Action {
     private Style mStyle;
 
     /**
-     * The fact - for backward compatibility to version 0.2.
+     * The quote - for backward compatibility to version 0.2.
      */
-    private String fact;
+    private String quote;
     
     /**
-     * The fact.
+     * The quote.
      */
-    private String mFact;
+    private String mQuote;
 
     /**
-     * Constructs a RoundhouseAction with specified style and fact.
+     * Constructs a RoundhouseAction with specified style and quote.
      * @param style
      *            the style
-     * @param fact
-     *            the fact
+     * @param quote
+     *            the quote
      */
-    public RoundhouseAction(final Style style, final String fact) {
+    public RoundhouseAction(final Style style, final String quote) {
         super();
         this.mStyle = style;
-        this.mFact = fact;
+        this.mQuote = quote;
     }
 
     /**
@@ -70,7 +71,7 @@ public final class RoundhouseAction implements Action {
      * @return the display name
      */
     public String getDisplayName() {
-        return "Chuck Norris";
+        return "Johnny";
     }
 
     /**
@@ -90,7 +91,7 @@ public final class RoundhouseAction implements Action {
     }
 
     /**
-     * Gets the Chuck Norris style.
+     * Gets the Johhny style.
      * @return the style
      */
     public Style getStyle() {
@@ -104,15 +105,15 @@ public final class RoundhouseAction implements Action {
     }
 
     /**
-     * Gets the Chuck Norris fact.
+     * Gets the Johnny quote.
      * @return the fact
      */
-    public String getFact() {
+    public String getQuote() {
         String theFact;
-        if (mFact != null) {
-            theFact = mFact;
+        if (mQuote != null) {
+            theFact = mQuote;
         } else {
-            theFact = fact;
+            theFact = quote;
         }
         return theFact;
     }

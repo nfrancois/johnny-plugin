@@ -8,7 +8,7 @@ A fork of the Chuck Norris plugin for Jenkins with french singer Johnny Halliday
 
 Build on [drone.io](http://drone.io)
 
-![status](https://drone.io/nfrancois/Johnny-plugin/status.png)
+[![status](https://drone.io/nfrancois/Johnny-plugin/status.png)](https://drone.io/nfrancois/Johnny-plugin)
 
 ## Download
 

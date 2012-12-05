@@ -40,6 +40,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
  * href="http://www.imdb.com/character/ch0038386/"
  * >http://www.imdb.com/character/ch0038386/</a>.
  * @author cliffano
+ * @author Nicolas François
  */
 public class CordellWalkerRecorder extends Recorder {
 
@@ -50,27 +51,27 @@ public class CordellWalkerRecorder extends Recorder {
             .getLogger(CordellWalkerRecorder.class.getName());
 
     /**
-     * Fact generator.
+     * Quote generator.
      */
-    private FactGenerator factGenerator;
+    private QuoteGenerator quoteGenerator;
 
     /**
      * Constructs a {@link CordellWalkerRecorder} with default
-     * {@link FactGenerator}.
+     * {@link QuoteGenerator}.
      */
     @DataBoundConstructor
     public CordellWalkerRecorder() {
-        this(new FactGenerator());
+        this(new QuoteGenerator());
     }
 
     /**
      * Constructs a {@link CordellWalkerRecorder} with specified
-     * {@link FactGenerator}.
-     * @param factGenerator
-     *            the fact generator
+     * {@link QuoteGenerator}.
+     * @param quoteGenerator
+     *            the quote generator
      */
-    public CordellWalkerRecorder(final FactGenerator factGenerator) {
-        this.factGenerator = factGenerator;
+    public CordellWalkerRecorder(final QuoteGenerator quoteGenerator) {
+        this.quoteGenerator = quoteGenerator;
         LOGGER.info("Johnny is activated");
     }
 
@@ -86,8 +87,8 @@ public class CordellWalkerRecorder extends Recorder {
         Action action = null;
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
-            String fact = factGenerator.random();
-            action = new RoundhouseAction(style, fact);
+            String quote = quoteGenerator.random();
+            action = new RoundhouseAction(style, quote);
         }
         return action;
     }
@@ -112,8 +113,8 @@ public class CordellWalkerRecorder extends Recorder {
             final Launcher launcher, final BuildListener listener)
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
-        String fact = factGenerator.random();
-        build.getActions().add(new RoundhouseAction(style, fact));
+        String quote = quoteGenerator.random();
+        build.getActions().add(new RoundhouseAction(style, quote));
         return true;
     }
 
