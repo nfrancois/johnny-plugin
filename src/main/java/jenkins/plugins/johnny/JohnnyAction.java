@@ -24,14 +24,11 @@ package jenkins.plugins.johnny;
 import hudson.model.Action;
 
 /**
- * {@link RoundhouseAction} keeps the style and quote associated with the action.
- * For more info, please watch <a
- * href="http://www.youtube.com/watch?v=Vb7lnpk3tRY"
- * >http://www.youtube.com/watch?v=Vb7lnpk3tRY</a>
+ * {@link JohnnyAction} keeps the style and quote associated with the action.
  * @author cliffano
  * @author Nicolas François
  */
-public final class RoundhouseAction implements Action {
+public final class JohnnyAction implements Action {
 
     /**
      * The style - for backward compatibility to version 0.2.
@@ -60,7 +57,7 @@ public final class RoundhouseAction implements Action {
      * @param quote
      *            the quote
      */
-    public RoundhouseAction(final Style style, final String quote) {
+    public JohnnyAction(final Style style, final String quote) {
         super();
         this.mStyle = style;
         this.mQuote = quote;

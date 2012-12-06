@@ -35,17 +35,16 @@ import java.util.logging.Logger;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * This class associates a RoundhouseAction to a job or a build.
+ * This class associates a JohnnyAction to a job or a build.
  * @author cliffano
  * @author Nicolas François
  */
-public class CordellWalkerRecorder extends Recorder {
+public class JohnnyRecorder extends Recorder {
 
     /**
      * Logger.
      */
-    private static final Logger LOGGER = Logger
-            .getLogger(CordellWalkerRecorder.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(JohnnyRecorder.class.getName());
 
     /**
      * Quote generator.
@@ -53,29 +52,29 @@ public class CordellWalkerRecorder extends Recorder {
     private QuoteGenerator quoteGenerator;
 
     /**
-     * Constructs a {@link CordellWalkerRecorder} with default
+     * Constructs a {@link JohnnyRecorder} with default
      * {@link QuoteGenerator}.
      */
     @DataBoundConstructor
-    public CordellWalkerRecorder() {
+    public JohnnyRecorder() {
         this(new QuoteGenerator());
     }
 
     /**
-     * Constructs a {@link CordellWalkerRecorder} with specified
+     * Constructs a {@link JohnnyRecorder} with specified
      * {@link QuoteGenerator}.
      * @param quoteGenerator
      *            the quote generator
      */
-    public CordellWalkerRecorder(final QuoteGenerator quoteGenerator) {
+    public JohnnyRecorder(final QuoteGenerator quoteGenerator) {
         this.quoteGenerator = quoteGenerator;
         LOGGER.info("Johnny is activated");
     }
 
     /**
-     * Gets the RoundhouseAction as the project action. This is applicable for
+     * Gets the JohnnyAction as the project action. This is applicable for
      * each job and only when there's at least one build in the job.
-     * @param project
+     * @param project 
      *            the project
      * @return the project action
      */
@@ -85,13 +84,13 @@ public class CordellWalkerRecorder extends Recorder {
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
             String quote = quoteGenerator.random();
-            action = new RoundhouseAction(style, quote);
+            action = new JohnnyAction(style, quote);
         }
         return action;
     }
 
     /**
-     * Adds RoundhouseAction to the build actions. This is applicable for each
+     * Adds JohnnyAction to the build actions. This is applicable for each
      * build.
      * @param build
      *            the build
@@ -111,7 +110,7 @@ public class CordellWalkerRecorder extends Recorder {
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
         String quote = quoteGenerator.random();
-        build.getActions().add(new RoundhouseAction(style, quote));
+        build.getActions().add(new JohnnyAction(style, quote));
         return true;
     }
 

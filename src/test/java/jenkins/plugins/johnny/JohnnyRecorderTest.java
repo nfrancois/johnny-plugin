@@ -13,23 +13,23 @@ import hudson.model.Result;
 import java.util.ArrayList;
 import java.util.List;
 
-import jenkins.plugins.johnny.CordellWalkerRecorder;
+import jenkins.plugins.johnny.JohnnyRecorder;
 import jenkins.plugins.johnny.QuoteGenerator;
-import jenkins.plugins.johnny.RoundhouseAction;
+import jenkins.plugins.johnny.JohnnyAction;
 import jenkins.plugins.johnny.Style;
 
 
 import junit.framework.TestCase;
 
-public class CordellWalkerRecorderTest extends TestCase {
+public class JohnnyRecorderTest extends TestCase {
 
 	private QuoteGenerator mockGenerator;
-	private CordellWalkerRecorder recorder;
+	private JohnnyRecorder recorder;
 
 	@Override
 	public void setUp() {
 		mockGenerator = mock(QuoteGenerator.class);
-		recorder = new CordellWalkerRecorder(mockGenerator);
+		recorder = new JohnnyRecorder(mockGenerator);
 	}
 
 	public void testGetProjectActionWithNoLastBuildGivesNullAction() {
@@ -44,36 +44,30 @@ public class CordellWalkerRecorderTest extends TestCase {
 
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
-		when(mockGenerator.random()).thenReturn(
-				"Les gens m'appellent l'idole des jeunes...");
+		when(mockGenerator.random()).thenReturn("Les gens m'appellent l'idole des jeunes...");
 
 		Action action = recorder.getProjectAction(mockProject);
 
-		assertTrue(action instanceof RoundhouseAction);
-		assertEquals(Style.THUMB_UP, ((RoundhouseAction) action).getStyle());
-		assertNotNull(((RoundhouseAction) action).getQuote());
+		assertTrue(action instanceof JohnnyAction);
+		assertEquals(Style.THUMB_UP, ((JohnnyAction) action).getStyle());
+		assertNotNull(((JohnnyAction) action).getQuote());
 	}
 
-	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact()
-			throws Exception {
+	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact() throws Exception {
 		List<Action> actions = new ArrayList<Action>();
 		AbstractBuild mockBuild = mock(AbstractBuild.class);
 		when(mockBuild.getResult()).thenReturn(Result.FAILURE);
 		when(mockBuild.getActions()).thenReturn(actions);
 
-		when(mockGenerator.random()).thenReturn(
-				"Les gens m'appellent l'idole des jeunes...");
+		when(mockGenerator.random()).thenReturn("Les gens m'appellent l'idole des jeunes...");
 
 		assertEquals(0, actions.size());
 
-		recorder.perform(mockBuild, mock(Launcher.class),
-				mock(BuildListener.class));
+		recorder.perform(mockBuild, mock(Launcher.class), mock(BuildListener.class));
 
 		assertEquals(1, actions.size());
-		assertTrue(actions.get(0) instanceof RoundhouseAction);
-		assertEquals(Style.BAD_ASS, ((RoundhouseAction) actions.get(0))
-				.getStyle());
-		assertEquals("Les gens m'appellent l'idole des jeunes...",
-				((RoundhouseAction) actions.get(0)).getQuote());
+		assertTrue(actions.get(0) instanceof JohnnyAction);
+		assertEquals(Style.BAD_ASS, ((JohnnyAction) actions.get(0)).getStyle());
+		assertEquals("Les gens m'appellent l'idole des jeunes...", ((JohnnyAction) actions.get(0)).getQuote());
 	}
 }

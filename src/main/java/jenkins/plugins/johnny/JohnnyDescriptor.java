@@ -28,40 +28,41 @@ import hudson.tasks.Publisher;
 
 /**
  * This class provides build step description.
+ * 
  * @author cliffano
  * @author Nicolas François
  */
 @Extension
-public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
+public class JohnnyDescriptor extends BuildStepDescriptor<Publisher> {
 
-    /**
-     * Constructs a {@link BeardDescriptor}.
-     */
-    public BeardDescriptor() {
-        super(CordellWalkerRecorder.class);
-    }
+	/**
+	 * Constructs a {@link JohnnyDescriptor}.
+	 */
+	public JohnnyDescriptor() {
+		super(JohnnyRecorder.class);
+	}
 
-    /**
-     * Gets the descriptor display name, used in the post step checkbox
-     * description.
-     * @return the descriptor display name
-     */
-    @Override
-    public final String getDisplayName() {
-        return "Activate Johnny";
-    }
+	/**
+	 * Gets the descriptor display name, used in the post step checkbox
+	 * description.
+	 * 
+	 * @return the descriptor display name
+	 */
+	@Override
+	public final String getDisplayName() {
+		return "Activate Johnny";
+	}
 
-    /**
-     * Checks whether this descriptor is applicable.
-     * @param clazz
-     *            the class
-     * @return true - of course the beard is applicable
-     */
-    @Override
-    public final boolean isApplicable(
-            final Class<? extends AbstractProject> clazz) {
-        return true;
-    }
-
+	/**
+	 * Checks whether this descriptor is applicable.
+	 * 
+	 * @param clazz
+	 *            the class
+	 * @return true - of course the beard is applicable
+	 */
+	@Override
+	public final boolean isApplicable(final Class<? extends AbstractProject> clazz) {
+		return true;
+	}
 
 }

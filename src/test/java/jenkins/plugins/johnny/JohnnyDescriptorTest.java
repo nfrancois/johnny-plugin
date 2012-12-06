@@ -1,16 +1,16 @@
 package jenkins.plugins.johnny;
 
 import static org.mockito.Mockito.mock;
-import jenkins.plugins.johnny.BeardDescriptor;
+import jenkins.plugins.johnny.JohnnyDescriptor;
 import hudson.model.AbstractProject;
 import junit.framework.TestCase;
 
-public class BeardDescriptorTest extends TestCase {
+public class JohnnyDescriptorTest extends TestCase {
 
-	private BeardDescriptor descriptor;
+	private JohnnyDescriptor descriptor;
 
 	public void setUp() {
-		descriptor = new BeardDescriptor();
+		descriptor = new JohnnyDescriptor();
 	}
 
 	public void testGetDisplayName() {
