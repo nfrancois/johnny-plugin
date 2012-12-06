@@ -18,6 +18,7 @@ import jenkins.plugins.johnny.QuoteGenerator;
 import jenkins.plugins.johnny.RoundhouseAction;
 import jenkins.plugins.johnny.Style;
 
+
 import junit.framework.TestCase;
 
 public class CordellWalkerRecorderTest extends TestCase {

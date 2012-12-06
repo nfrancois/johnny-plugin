@@ -106,15 +106,15 @@ public final class RoundhouseAction implements Action {
 
     /**
      * Gets the Johnny quote.
-     * @return the fact
+     * @return the quote
      */
     public String getQuote() {
-        String theFact;
+        String theQuote;
         if (mQuote != null) {
-            theFact = mQuote;
+        	theQuote = mQuote;
         } else {
-            theFact = quote;
+        	theQuote = quote;
         }
-        return theFact;
+        return theQuote;
     }
 }

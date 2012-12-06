@@ -35,10 +35,7 @@ import java.util.logging.Logger;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * This class associates a RoundhouseAction to a job or a build. For more info
- * on Cordell Walker, check out <a
- * href="http://www.imdb.com/character/ch0038386/"
- * >http://www.imdb.com/character/ch0038386/</a>.
+ * This class associates a RoundhouseAction to a job or a build.
  * @author cliffano
  * @author Nicolas François
  */

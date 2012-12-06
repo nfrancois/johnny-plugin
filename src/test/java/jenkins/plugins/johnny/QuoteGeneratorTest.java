@@ -12,14 +12,14 @@ public class QuoteGeneratorTest extends TestCase {
 	}
 
 	public void testRandomGivesAtLeast2Facts() {
-		String lastFact = null;
+		String lastQuote = null;
 		for (int i = 0; i < 1000000; i++) {
 			String currFact = generator.random();
-			if (lastFact != null && !lastFact.equals(currFact)) {
+			if (lastQuote != null && !lastQuote.equals(currFact)) {
 				return;
 			}
-			lastFact = currFact;
+			lastQuote = currFact;
 		}
-		fail("Random should give at least 2 different facts in 1000000 tries.");
+		fail("Random should give at least 2 different quotes in 1000000 tries.");
 	}
 }
